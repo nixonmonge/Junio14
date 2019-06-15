@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,9 +14,23 @@ namespace Junio14
         {
             int n1 = 0;
             int n2 = 0;
-            int n3 = n1/n2;
+            try
+            {
+                int n3 = n1 / n2;
+                Debug.WriteLine("Esto no se va a ejecutar");
+            }
 
+            catch (Exception ex)
+            {
 
+                Debug.WriteLine("Una Excepcion");
+            }
+            //errores especifico
+            /*catch (DivideByZeroException ex) { 
+
+                Debug.WriteLine("Div por 0");
+            }*/
+            // captura todos los errores
 
         }
     }
